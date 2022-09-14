@@ -3,31 +3,33 @@ let adicionadosAoCarrinho = []
 // Criando os cards dos produtos
 let listaProdutos = document.getElementsByClassName('produtos')[0]
 for (let produto of data) {
-    let li = document.createElement('li')
-    li.setAttribute('class', 'card')
-    li.setAttribute('id', produto.id)
-    let div = document.createElement('div')
-    div.style.backgroundColor = '#F5F5F5'
-    div.style.display = 'flex'
-    div.style.justifyContent = 'center'
-    let imagem = document.createElement('img')
-    imagem.src = produto.img
-    div.append(imagem)
-    let classificacao = document.createElement('p')
-    classificacao.innerText = produto.tag[0]
-    classificacao.setAttribute('class', 'classificacao')
-    let titulo = document.createElement('h4')
-    titulo.innerText = produto.nameItem
-    let descricao = document.createElement('p')
-    descricao.innerText = produto.description
-    descricao.setAttribute('class', 'descricao')
-    let preco = document.createElement('p')
-    preco.innerText = `R$ ${produto.value.toFixed(2)}`
-    preco.setAttribute('class', 'preco')
-    let add = document.createElement('button')
-    add.innerText = produto.addCart
-    li.append(div, classificacao, titulo, descricao, preco, add)
-    listaProdutos.append(li)
+    if (produto.tag[0] === "Acessórios") {
+        let li = document.createElement('li')
+        li.setAttribute('class', 'card')
+        li.setAttribute('id', produto.id)
+        let div = document.createElement('div')
+        div.style.backgroundColor = '#F5F5F5'
+        div.style.display = 'flex'
+        div.style.justifyContent = 'center'
+        let imagem = document.createElement('img')
+        imagem.src = produto.img
+        div.append(imagem)
+        let classificacao = document.createElement('p')
+        classificacao.innerText = produto.tag[0]
+        classificacao.setAttribute('class', 'classificacao')
+        let titulo = document.createElement('h4')
+        titulo.innerText = produto.nameItem
+        let descricao = document.createElement('p')
+        descricao.innerText = produto.description
+        descricao.setAttribute('class', 'descricao')
+        let preco = document.createElement('p')
+        preco.innerText = `R$ ${produto.value.toFixed(2)}`
+        preco.setAttribute('class', 'preco')
+        let add = document.createElement('button')
+        add.innerText = produto.addCart
+        li.append(div, classificacao, titulo, descricao, preco, add)
+        listaProdutos.append(li)
+    }
 }
 
 
@@ -94,7 +96,6 @@ let addToCart = (event) => {
                 item.append(divImg, div_)
                 ul.append(item)
                 precoTotal += data[i].value
-                
 
                 if (ul.children.length === 1) {
                     let divQuantidade = document.createElement('div')
@@ -232,13 +233,6 @@ pesquisar.addEventListener('click', () => {
             add.innerText = obj.addCart
             li.append(div, classificacao, titulo, descricao, preco, add)
             lista.append(li)
-            lista.addEventListener('click', addToCart)
         }
-    }
-    if (lista.children.length == 0) {
-        let p = document.createElement('p')
-        p.innerText = 'Nenhum produto com este nome foi encontrado.'
-        p.style.marginTop = '20px'
-        vitrine.insertAdjacentElement('beforeend', p)
     }
 })

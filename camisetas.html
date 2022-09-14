@@ -1,33 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=k, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/reset.css">
-    <title>Weartake</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weartake/Camisetas</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
-        li.todos {
-            font-weight: bold;
-        }
+        li.camisetas {font-weight: bold;}
     </style>
 </head>
-
 <body>
     <script defer src="/js/database.js"></script>
-    <script defer src="/js/index.js"></script>
+    <script defer src="/js/camisetas.js"></script>
     <header class="cabecalho">
-        <div>
+        <div>    
             <h1>Weartake</h1>
             <nav class="navbar">
                 <ul>
                     <li class="todos"><a href="http://127.0.0.1:5500/index.html">Todos</a></li>
                     <li class="acessorios"><a href="http://127.0.0.1:5500/acessorios.html">Acessórios</a></li>
-                    <li class="camisetas"><a href="http://127.0.0.1:5500/camisetas.html">Camisetas</a></li>
+                    <li class="camisetas">Camisetas</li>
                     <li class="ajuda"><a href="http://127.0.0.1:5500/ajuda.html">Ajuda</a></li>
                 </ul>
             </nav>
@@ -40,11 +35,11 @@
 
             </ul>
         </section>
-
+        
         <section class="pesquisa-e-carrinho">
             <div class="pesquisa">
-                <input id="input" type="search" placeholder="Digite aqui sua pesquisa">
-                <button id="botao-pesquisar" type="submit">Pesquisar</button>
+                <input type="search" placeholder="Digite aqui sua pesquisa">
+                <button type="submit">Pesquisar</button>
             </div>
             <div class="carrinho">
                 <h4 class="carrinho-h4">Carrinho de compras</h4>
@@ -56,5 +51,4 @@
         </section>
     </main>
 </body>
-
 </html>
