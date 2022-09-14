@@ -2,7 +2,7 @@ let adicionadosAoCarrinho = []
 
 // Criando os cards dos produtos
 let listaProdutos = document.getElementsByClassName('produtos')[0]
-for (let produto of data) {
+for (let produto of data1) {
     let li = document.createElement('li')
     li.setAttribute('class', 'card')
     li.setAttribute('id', produto.id)
@@ -52,9 +52,9 @@ let addToCart = (event) => {
         item.style.marginBottom = '20px'
 
         let li = botao.closest('li')
-        for (let i = 0; i < data.length; i++) {
-            if (li.id == data[i].id) {
-                adicionadosAoCarrinho.push(data[i])
+        for (let i = 0; i < data1.length; i++) {
+            if (li.id == data1[i].id) {
+                adicionadosAoCarrinho.push(data1[i])
                 let divImg = document.createElement('div')
                 divImg.style.backgroundColor = 'white'
                 divImg.style.width = '80px'
@@ -63,7 +63,7 @@ let addToCart = (event) => {
                 divImg.style.alignItems = 'center'
                 divImg.style.justifyContent = 'center'
                 let imagem_ = document.createElement('img')
-                imagem_.src = data[i].img
+                imagem_.src = data1[i].img
                 imagem_.style.width = '80px'
                 divImg.append(imagem_)
                 let div_ = document.createElement('div')
@@ -73,13 +73,13 @@ let addToCart = (event) => {
                 div_.style.height = '98%'
                 div_.style.width = '200px'
                 let titulo_ = document.createElement('p')
-                titulo_.innerText = data[i].nameItem
+                titulo_.innerText = data1[i].nameItem
                 titulo_.style.fontSize = '14px'
                 titulo_.style.fontWeight = 'bold'
                 titulo_.style.marginLeft = '20px'
                 let preco_ = document.createElement('p')
                 preco_.setAttribute('class', 'preco')
-                preco_.innerText = `R$ ${data[i].value.toFixed(2)}`
+                preco_.innerText = `R$ ${data1[i].value.toFixed(2)}`
                 preco_.style.marginLeft = '20px'
                 let remover = document.createElement('button')
                 remover.style.border = 'none'
@@ -93,7 +93,7 @@ let addToCart = (event) => {
                 item.setAttribute('id', `-${li.id}`)
                 item.append(divImg, div_)
                 ul.append(item)
-                precoTotal += data[i].value
+                precoTotal += data1[i].value
                 
 
                 if (ul.children.length === 1) {
@@ -164,7 +164,7 @@ carrinho2.addEventListener('click', (event) => {
     if (botao.tagName === 'BUTTON') {
         let li = botao.closest('li')
         li.remove()
-        for (let j of data) {
+        for (let j of data1) {
             if (li.id == `-${j.id}`) {
                 precoTotal -= j.value
                 adicionadosAoCarrinho.splice((j.id - 1), 1)
