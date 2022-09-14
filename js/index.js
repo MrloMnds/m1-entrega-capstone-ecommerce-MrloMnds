@@ -44,7 +44,6 @@ let addToCart = (event) => {
             carrinho.setAttribute('class', 'carrinho-com-produtos')
         }
         quantidade++
-
         let ul = document.getElementById('itens-carrinho')
         let item = document.createElement('li')
         item.style.display = 'flex'
