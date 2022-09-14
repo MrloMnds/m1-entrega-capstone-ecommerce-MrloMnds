@@ -203,7 +203,7 @@ pesquisar.addEventListener('click', () => {
     let lista = document.createElement('ul')
     lista.setAttribute('class', 'produtos')
     vitrine.append(lista)
-    for (let obj of data) {
+    for (let obj of data1) {
         let nome = obj.nameItem
         let nomePesquisa = input.value
         if (nome.toLowerCase() === nomePesquisa.toLowerCase()) {
